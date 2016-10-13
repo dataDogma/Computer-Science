@@ -1,0 +1,74 @@
+---
+title: "Swirl_Course_Practise"
+author: "Rahul"
+date: "October 13, 2016"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+```
+
+## Sequence of numbers
+-- --
+
+1. Creating Sequences in R
+
+  + use " : " operator, from ith : to Jth number.
+  
+  + This gices us every integer b/w (and including) 1 and 20.
+  
+  + Can also create sequence of "Real numbers".
+  
+  
+```{r}
+# Create a sequence of numbers from 1:20
+
+1:20
+
+# Create a sequence of "Real numbers"
+pi : 10
+
+# With a little ingenuity we can create reverse sequence
+15:1
+
+# We can get more information about even the operators in R
+#(uncomment to test these) ?`:` 
+#(uncomment to test these) ?":"
+
+```
+
+-- --
+
+2. Often we desire more control over a sequence we're creating, We could use the _seq()_ to do this.
+
+  + To generate a sequence of _vectors of numbers_ to a range.
+  
+  + We can increment them using a _step size_ (say 0.5), to do this, we use _by_ statement.
+  
+  + We can be lazy too, we just want a sequence of n numbers b/w ith to jth no, we can use _length =_ argument and assign a integer value, denoting length of the sequence.
+  
+```{R}
+seq(1, 20)
+
+# create a vector of no. ranging from 0 to 10, step size of 0.5
+seq(0, 10, by = 0.5)
+
+# Create a sequence of 30 no's from 5 to 10
+my_seq <- seq(5 , 10, length = 30)
+
+# Try confirming if the length of "my_seq" is truely 30
+length(my_seq)
+
+# Using a bit of ingenuity we can also generate a vector( 1 to N) having the same length of my_seq if we don't know the length of my_seq
+1:length(my_seq)
+
+# and another way!
+seq(along.with = my_seq)
+
+# and yet another way!
+seq_along( my_seq )
+
+
+
+```
